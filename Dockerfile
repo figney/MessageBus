@@ -7,10 +7,11 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
-COPY ["MessageBus/MessageBus.csproj", "MessageBus/"]
+ADD src .
 RUN dotnet restore "MessageBus/MessageBus.csproj"
-COPY . .
-WORKDIR "/src/MessageBus"
+
+WORKDIR /src/MessageBus
+
 RUN dotnet build "MessageBus.csproj" -c Release -o /app/build
 
 FROM build AS publish
