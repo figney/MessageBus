@@ -60,9 +60,10 @@ namespace MessageBus.Application.DomainServices
                 command.ExecuteNonQuery();
                 await transaction.CommitAsync();
             }
-            catch
+            catch (Exception ex)
             {
                 await transaction.RollbackAsync();
+                _logger.LogError(ex, "UpdateAdvertiseToExpiredAsync: ids({0}, {1})", idString, ex.Message);
             }
             await connection.CloseAsync();
         }

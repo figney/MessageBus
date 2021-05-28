@@ -24,7 +24,7 @@ namespace MessageBus.Application.BackgroundServices
             {
                 try
                 {
-                    var ids = await _userAdvertiseDomainService.FindAdvertiseIdsAsync(DateTime.Now.AddDays(30), "InProgress", 1000);
+                    var ids = await _userAdvertiseDomainService.FindAdvertiseIdsAsync(DateTime.Now.AddDays(-30), "InProgress", 1000);
                     if (ids.Count == 0)
                     {
                         await Task.Delay(1000 * 60, stoppingToken);
