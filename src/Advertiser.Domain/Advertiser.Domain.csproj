@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <Import Project="..\..\advertiser.props" />
+    <Import Project="..\..\version.props" />
+
+    <ItemGroup>
+        <PackageReference Include="MongoDB.Bson" Version="2.12.4" />
+    </ItemGroup>
+
+</Project>
