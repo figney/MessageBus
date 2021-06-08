@@ -10,7 +10,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{48A0E0C7-2F95-438F-A298-389D97C298C9}"
 	ProjectSection(SolutionItems) = preProject
 		advertiser.props = advertiser.props
-		Dockerfile = Dockerfile
 		version.props = version.props
 	EndProjectSection
 EndProject
